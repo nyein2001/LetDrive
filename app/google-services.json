@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1044206606425",
+    "project_id": "letdrive-125f3",
+    "storage_bucket": "letdrive-125f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044206606425:android:444184c706fab91bfab948",
+        "android_client_info": {
+          "package_name": "com.lightidea.products.letdrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044206606425-m21hdjak4sp5d2evlra3qfvkmcc4qtff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt_u0vww2yzybZwjpyoLF7bmAXHO_m-3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044206606425-m21hdjak4sp5d2evlra3qfvkmcc4qtff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

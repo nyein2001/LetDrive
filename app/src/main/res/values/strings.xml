@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LetDrive</string>
+    <string name="web_client_id">1044206606425-m21hdjak4sp5d2evlra3qfvkmcc4qtff.apps.googleusercontent.com</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="no_internet_title">No Internet</string>
+    <string name="no_internet_message">Please Check Your Internet</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+</resources>
