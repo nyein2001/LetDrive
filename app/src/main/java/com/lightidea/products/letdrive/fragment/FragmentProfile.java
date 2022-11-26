@@ -34,15 +34,9 @@ public class FragmentProfile extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        root_view = inflater.inflate(R.layout.profile_fragment,container, false);
+        root_view = inflater.inflate(R.layout.profile_fragment, container, false);
         initComponent();
-        new Handler().postDelayed(() -> {
-            if (NetworkCheck.isConnected(getActivity())) {
-                startAction();
-            } else {
-                showNoInternetDialog();
-            }
-        },300);
+        startAction();
         return root_view;
     }
 
@@ -56,29 +50,9 @@ public class FragmentProfile extends Fragment {
     }
 
     public void startAction() {
-        if (firebaseUser != null) {
             Tools.displayImageCircle(requireContext(), driverImage, firebaseUser.getPhotoUrl());
             txtName.setText(firebaseUser.getDisplayName());
             txtEmail.setText(firebaseUser.getEmail());
-        } else {
-            Intent loginIntent = new Intent(getContext(), GoogleLoginActivity.class);
-            startActivity(loginIntent);
-        }
-    }
-
-    public void showNoInternetDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle(getString(R.string.no_internet_title))
-                .setMessage(getString(R.string.no_internet_message))
-                .setCancelable(false)
-                .setPositiveButton("Yes", (dialogInterface, i) -> {
-                    if (NetworkCheck.isConnected(getActivity())) {
-                        startAction();
-                    } else {
-                        showNoInternetDialog();
-                    }
-                })
-                .show();
     }
 
 }

@@ -6,9 +6,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -28,7 +28,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -36,21 +36,22 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/name_sign"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                android:src="@drawable/name_sign" />
 
             <TextView
                 android:id="@+id/txt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="35dp"
-                android:textSize="22sp"
-                android:fontFamily="sans-serif-medium"/>
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/name"
+                android:textSize="22sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -60,21 +61,22 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/email_sign"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                android:src="@drawable/email_sign" />
 
             <TextView
                 android:id="@+id/txt_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="35dp"
-                android:textSize="22sp"
-                android:fontFamily="sans-serif-medium"/>
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/email"
+                android:textSize="22sp" />
         </RelativeLayout>
 
         <View
@@ -87,21 +89,22 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logout_sign"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                android:src="@drawable/logout_sign" />
 
             <TextView
                 android:id="@+id/txt_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/logout"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="35dp"
-                android:textSize="22sp"
-                android:fontFamily="sans-serif-medium"/>
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/logout"
+                android:textSize="22sp" />
         </RelativeLayout>
 
     </LinearLayout>
