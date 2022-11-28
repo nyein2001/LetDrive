@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="overlay_dark_20">#33000000</color>
     <color name="overlay_dark_10">#1A000000</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_3">#f7f7f7</color>
 </resources>

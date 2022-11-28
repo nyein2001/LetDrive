@@ -186,17 +186,22 @@ public class CustomerLocationActivity extends AppCompatActivity {
             ((OSRMRoadManager) roadManager).setMean(OSRMRoadManager.MEAN_BY_CAR);
 
             Drawable nodeIcon = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_marker, null);
-            for (int i = 0; i < road.mNodes.size(); i++) {
-                RoadNode node = road.mNodes.get(i);
-                Marker nodeMarker = new Marker(map);
-                nodeMarker.setPosition(node.mLocation);
-                nodeMarker.setIcon(nodeIcon);
-                nodeMarker.setTitle("Step " + i);
-                nodeMarker.setSnippet(node.mInstructions);
-                nodeMarker.setSubDescription(Road.getLengthDurationText(context, node.mLength, node.mDuration));
-                Drawable icon = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_continue, null);
-                nodeMarker.setImage(icon);
-                map.getOverlays().add(nodeMarker);
+            try {
+                for (int i = 0; i < road.mNodes.size(); i++) {
+                    RoadNode node = road.mNodes.get(i);
+                    Marker nodeMarker = new Marker(map);
+                    nodeMarker.setPosition(node.mLocation);
+                    nodeMarker.setIcon(nodeIcon);
+                    nodeMarker.setTitle("Step " + i);
+                    nodeMarker.setSnippet(node.mInstructions);
+                    nodeMarker.setSubDescription(Road.getLengthDurationText(context, node.mLength, node.mDuration));
+                    Drawable icon = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_continue, null);
+                    nodeMarker.setImage(icon);
+                    map.getOverlays().add(nodeMarker);
+                }
+            }catch (NullPointerException e){
+                e.printStackTrace();
+                finish();
             }
             return null;
         }

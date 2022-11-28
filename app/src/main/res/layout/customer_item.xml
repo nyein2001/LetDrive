@@ -41,7 +41,7 @@
                 android:singleLine="true"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Donec"
+                android:text="Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:fontFamily="sans-serif-medium" />
 
@@ -52,6 +52,8 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:fontFamily="sans-serif"
+                android:linksClickable="true"
+                android:autoLink="phone"
                 app:drawableStartCompat="@drawable/ic_phone"
                 android:layout_margin="2dp"
                 android:layout_below="@+id/name"/>

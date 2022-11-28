@@ -2,7 +2,9 @@ package com.lightidea.products.letdrive.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.text.Layout;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,9 @@ import com.lightidea.products.letdrive.R;
 import com.lightidea.products.letdrive.model.CustomerDataModel;
 import com.lightidea.products.letdrive.ui.CustomerLocationActivity;
 import com.lightidea.products.letdrive.utils.Tools;
+
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.util.ArrayList;
 
@@ -42,6 +47,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         holder.txtName.setText(model.getName());
         Tools.displayImageCircle(context,holder.customerPhoto,model.getPhoto());
         holder.txtPhone.setText(model.getPhone());
+        holder.txtPhone.setMovementMethod(LinkMovementMethod.getInstance());
         holder.checkingCustomerLocation.setOnClickListener(view -> {
             Intent mapIntent = new Intent(context, CustomerLocationActivity.class);
             mapIntent.putExtra("INFO", model);

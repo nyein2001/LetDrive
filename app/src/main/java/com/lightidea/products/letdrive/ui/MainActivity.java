@@ -3,27 +3,26 @@ package com.lightidea.products.letdrive.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.lightidea.products.letdrive.R;
 import com.lightidea.products.letdrive.fragment.FragmentHome;
+import com.lightidea.products.letdrive.fragment.FragmentMap;
 import com.lightidea.products.letdrive.fragment.FragmentProfile;
 import com.lightidea.products.letdrive.utils.NetworkCheck;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
 
     @Override
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     public void initComponent() {
-        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
@@ -70,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (item_id == R.id.home) {
             loadFragment(new FragmentHome());
             return true;
-        } else if (item_id == R.id.profile) {
+        }else if (item_id == R.id.map) {
+            loadFragment(new FragmentMap());
+            return true;
+        }else if (item_id == R.id.profile) {
             loadFragment(new FragmentProfile());
             return true;
         } else {
@@ -85,25 +87,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 .setCancelable(false)
                 .setPositiveButton("Yes", null)
                 .show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
-        MenuItem item = menu.getItem(R.id.menu_toolbar_search);
-        SearchView searchView = (SearchView) item.getActionView();
-        searchView.setMaxWidth(Integer.MAX_VALUE);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-        return true;
     }
 }
