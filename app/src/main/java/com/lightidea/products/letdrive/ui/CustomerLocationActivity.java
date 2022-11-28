@@ -186,7 +186,6 @@ public class CustomerLocationActivity extends AppCompatActivity {
             ((OSRMRoadManager) roadManager).setMean(OSRMRoadManager.MEAN_BY_CAR);
 
             Drawable nodeIcon = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_marker, null);
-            try {
                 for (int i = 0; i < road.mNodes.size(); i++) {
                     RoadNode node = road.mNodes.get(i);
                     Marker nodeMarker = new Marker(map);
@@ -199,10 +198,6 @@ public class CustomerLocationActivity extends AppCompatActivity {
                     nodeMarker.setImage(icon);
                     map.getOverlays().add(nodeMarker);
                 }
-            }catch (NullPointerException e){
-                e.printStackTrace();
-                finish();
-            }
             return null;
         }
 
